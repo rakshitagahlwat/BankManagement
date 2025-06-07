@@ -57,7 +57,7 @@ public class Main {
 
         Account account = new Account(accNo, name, pin);
         service.createAccount(account);
-        System.out.println("✅ Account created successfully.");
+        System.out.println(" Account created successfully.");
     }
 
     private static void login() {
@@ -72,10 +72,10 @@ public class Main {
         String pin = scanner.nextLine();
 
         if (service.authenticate(accNo, pin)) {
-            System.out.println("✅ Login successful.");
+            System.out.println(" Login successful.");
             dashboard(accNo);
         } else {
-            System.out.println("❌ Invalid credentials.");
+            System.out.println(" Invalid credentials.");
         }
     }
 
@@ -108,9 +108,9 @@ public class Main {
                     }
                     double amt = Double.parseDouble(amtInput);
                     if (service.deposit(accNo, amt))
-                        System.out.println("✅ Deposited successfully.");
+                        System.out.println(" Deposited successfully.");
                     else
-                        System.out.println("❌ Deposit failed.");
+                        System.out.println(" Deposit failed.");
                 }
                 case 2 -> {
                     System.out.print("Enter amount: ");
@@ -121,9 +121,9 @@ public class Main {
                     }
                     double amt = Double.parseDouble(amtInput);
                     if (service.withdraw(accNo, amt))
-                        System.out.println("✅ Withdrawal successful.");
+                        System.out.println(" Withdrawal successful.");
                     else
-                        System.out.println("❌ Insufficient balance.");
+                        System.out.println(" Insufficient balance.");
                 }
                 case 3 -> System.out.println("💰 Balance: Rs. " + service.getBalance(accNo));
                 case 4 -> service.printTransactionHistory(accNo);
@@ -131,12 +131,12 @@ public class Main {
                     System.out.print("Enter new PIN: ");
                     String newPin = scanner.nextLine();
                     if (service.changePin(accNo, newPin))
-                        System.out.println("🔑 PIN updated.");
+                        System.out.println(" PIN updated.");
                     else
-                        System.out.println("❌ PIN update failed.");
+                        System.out.println(" PIN update failed.");
                 }
                 case 6 -> {
-                    System.out.println("👋 Logged out.");
+                    System.out.println(" Logged out.");
                     return;
                 }
             }
